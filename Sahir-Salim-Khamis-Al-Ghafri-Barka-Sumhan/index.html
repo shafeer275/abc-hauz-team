@@ -1,0 +1,273 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABC Hauz - Sahir Salim Khamis Al Ghafri</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#fff;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+.nav{
+    position:fixed;top:0;width:100%;z-index:1000;
+    background:rgba(10,10,10,0.92);backdrop-filter:blur(20px);
+    padding:18px 50px;display:flex;justify-content:space-between;align-items:center;
+    border-bottom:1px solid rgba(201,169,110,0.15);
+}
+.logo-img{height:40px;width:auto}
+.nav-cta{
+    background:transparent;border:1px solid #C9A96E;color:#C9A96E;padding:10px 24px;
+    font-weight:600;font-size:11px;letter-spacing:2px;text-decoration:none;transition:0.3s;text-transform:uppercase;
+}
+.nav-cta:hover{background:#C9A96E;color:#0a0a0a}
+
+.hero{height:100vh;position:relative;display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;top:0;left:0;width:100%;height:100%}
+.hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(0.35)}
+.hero-overlay{
+    position:absolute;top:0;left:0;width:100%;height:100%;
+    background:linear-gradient(135deg,rgba(10,10,10,0.9) 0%,rgba(10,10,10,0.5) 100%);
+}
+.hero-content{position:relative;z-index:2;padding:0 80px;max-width:900px;width:100%}
+.hero-top-row{display:flex;align-items:flex-start;gap:16px;margin-bottom:30px}
+.hero-photo{
+    width:189px;height:302px;flex-shrink:0;overflow:hidden;border-radius:4px;
+    border:2px solid rgba(201,169,110,0.4);
+    box-shadow:0 4px 15px rgba(0,0,0,0.4);
+}
+.hero-photo img{
+    width:100%;height:100%;object-fit:cover;object-position:top center;
+    opacity:0.55;filter:brightness(0.8) contrast(1.1) saturate(0.8);
+    transition:all 0.4s;
+}
+.hero-photo:hover img{opacity:0.8;filter:brightness(0.9) contrast(1.1) saturate(1)}
+.hero-badge{
+    writing-mode:vertical-lr;text-orientation:upright;
+    display:inline-block;border:1px solid #C9A96E;color:#C9A96E;
+    padding:20px 8px;font-size:10px;letter-spacing:4px;text-transform:uppercase;
+    font-weight:500;height:302px;display:flex;align-items:center;justify-content:center;
+}
+.hero h1{font-family:'Playfair Display',serif;font-size:52px;font-weight:700;line-height:1.15;margin-bottom:20px}
+.hero h1 span{color:#C9A96E}
+.hero p{color:rgba(255,255,255,0.5);font-size:15px;line-height:1.9;margin-bottom:35px;max-width:480px;font-weight:300}
+.hero-buttons{display:flex;flex-direction:column;gap:19px;position:absolute;left:337px;top:174px}
+.btn-primary{
+    background:#C9A96E;color:#0a0a0a;padding:15px 36px;
+    font-weight:700;font-size:12px;letter-spacing:1.5px;text-decoration:none;transition:0.3s;display:inline-block;text-transform:uppercase;
+}
+.btn-primary:hover{background:#d4b87a;transform:translateY(-2px);box-shadow:0 10px 30px rgba(201,169,110,0.3)}
+.btn-outline{
+    border:1px solid rgba(255,255,255,0.25);color:#fff;padding:15px 36px;
+    font-weight:500;font-size:12px;letter-spacing:1.5px;text-decoration:none;transition:0.3s;display:inline-block;text-transform:uppercase;
+}
+.btn-outline:hover{border-color:#C9A96E;color:#C9A96E}
+.scroll-indicator{position:absolute;bottom:40px;left:50%;transform:translateX(-50%);z-index:2;text-align:center}
+.scroll-indicator span{
+    display:block;width:1px;height:50px;background:linear-gradient(180deg,#C9A96E,transparent);
+    margin:0 auto 10px;animation:scroll 2s infinite;
+}
+.scroll-indicator p{font-size:9px;color:rgba(255,255,255,0.3);letter-spacing:3px;text-transform:uppercase}
+@keyframes scroll{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
+
+.section-title{text-align:center;padding:80px 20px 50px}
+.section-title h2{font-family:'Playfair Display',serif;font-size:38px;font-weight:600;margin-bottom:10px;letter-spacing:1px}
+.section-title p{color:rgba(255,255,255,0.4);font-size:14px;letter-spacing:1px}
+.section-title .line{width:50px;height:2px;background:#C9A96E;margin:20px auto 0}
+
+.consultant-section{padding:0 20px 100px;display:flex;justify-content:center}
+.consultant-card{
+    display:flex;max-width:1000px;width:100%;
+    background:#111;border:1px solid rgba(255,255,255,0.08);overflow:hidden;
+    box-shadow:0 40px 100px rgba(0,0,0,0.6);
+}
+
+.card-call{
+    flex:1;padding:50px 30px;display:flex;flex-direction:column;align-items:center;
+    justify-content:center;text-align:center;background:rgba(255,255,255,0.03);
+    border-right:1px solid rgba(255,255,255,0.06);
+}
+.card-call h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:#fff;margin-bottom:28px;letter-spacing:4px}
+.phone-circle{
+    width:85px;height:85px;border:2px solid #C9A96E;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:28px;transition:all 0.3s;cursor:pointer;
+}
+.phone-circle:hover{background:rgba(201,169,110,0.1);transform:scale(1.05)}
+.phone-circle svg{width:34px;height:34px;fill:#C9A96E}
+.card-call .role{font-size:9px;text-transform:uppercase;letter-spacing:4px;color:rgba(255,255,255,0.4);margin-bottom:22px;font-weight:500}
+.phone-box{
+    border:1px solid rgba(201,169,110,0.5);border-radius:8px;padding:14px 24px;
+    display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff;
+    transition:all 0.3s;width:100%;max-width:240px;justify-content:center;
+}
+.phone-box:hover{background:#C9A96E;border-color:#C9A96E}
+.phone-box svg{width:16px;height:16px;fill:#C9A96E;transition:fill 0.3s}
+.phone-box:hover svg{fill:#0a0a0a}
+.phone-box .number{font-size:0.95rem;font-weight:600;letter-spacing:1px}
+
+.card-logo{
+    flex:1;padding:50px 30px;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;background:rgba(255,255,255,0.03);
+    border-right:1px solid rgba(255,255,255,0.06);
+}
+.card-logo-img{width:280px;height:auto}
+
+.card-time{flex:1;padding:50px 30px;background:rgba(255,255,255,0.03);text-align:left}
+.card-time h3{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:#fff;margin-bottom:8px;letter-spacing:2px;text-align:left}
+.time-clock{
+    width:34px;height:34px;border:2px solid #C9A96E;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;margin-bottom:22px;
+}
+.time-clock svg{width:15px;height:15px;fill:#C9A96E}
+.time-row{
+    display:flex;justify-content:space-between;align-items:center;padding:10px 0;
+    border-bottom:1px solid rgba(255,255,255,0.06);text-align:left;
+}
+.time-row:last-child{border-bottom:none}
+.time-row .day{color:rgba(255,255,255,0.45);font-weight:500;letter-spacing:1px;text-transform:uppercase;font-size:10px}
+.time-row .hours{color:#fff;font-weight:600;font-size:11px;letter-spacing:0.5px}
+
+.location-section{padding:0 60px 100px;max-width:1200px;margin:0 auto}
+.location-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.location-img{
+    width:100%;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,0.5);transition:all 0.4s;
+}
+.location-img:hover{transform:translateY(-5px);box-shadow:0 25px 70px rgba(201,169,110,0.2)}
+.location-info{padding:20px 0}
+.location-info h3{font-family:'Playfair Display',serif;font-size:30px;font-weight:600;margin-bottom:20px;letter-spacing:1px}
+.location-info h3 span{color:#C9A96E}
+.location-info .address{display:flex;align-items:flex-start;gap:12px;margin-bottom:20px}
+.location-info .address svg{width:18px;height:18px;fill:#C9A96E;flex-shrink:0;margin-top:4px}
+.location-info .address span{color:rgba(255,255,255,0.5);font-size:13px;line-height:1.7;font-weight:300}
+.location-info .hours-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:25px}
+.location-info .hour-item{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);padding:14px 18px;border-radius:10px}
+.location-info .hour-item .day{font-size:9px;color:#C9A96E;letter-spacing:2px;text-transform:uppercase;font-weight:600}
+.location-info .hour-item .time{font-size:12px;color:#fff;font-weight:600;margin-top:4px;letter-spacing:0.5px}
+
+.dir-btn{
+    display:inline-block;margin-top:30px;padding:15px 36px;
+    background:#C9A96E;color:#0a0a0a;
+    text-decoration:none;font-weight:700;font-size:12px;letter-spacing:1.5px;
+    transition:0.3s;text-transform:uppercase;
+}
+.dir-btn:hover{transform:translateY(-2px);box-shadow:0 12px 40px rgba(201,169,110,0.35);background:#d4b87a}
+
+.footer{
+    padding:50px 60px;border-top:1px solid rgba(255,255,255,0.05);
+    display:flex;justify-content:space-between;align-items:center;
+}
+.footer-logo{height:35px;width:auto}
+.footer-copy{color:rgba(255,255,255,0.2);font-size:11px;letter-spacing:0.5px}
+
+@media(max-width:900px){
+    .nav{padding:15px 20px}
+    .hero-content{padding:0 30px;max-width:100%}
+    .hero h1{font-size:34px}
+    .hero-photo{width:40px;height:40px}
+    .consultant-card{flex-direction:column}
+    .card-call,.card-logo,.card-time{border-right:none;border-bottom:1px solid rgba(255,255,255,0.06)}
+    .card-time{border-bottom:none}
+    .location-grid{grid-template-columns:1fr}
+    .footer{flex-direction:column;gap:15px;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+    <img src="../01_input_pdfs/Working_Data/abc-hauz-logo-small.png" alt="ABC Hauz" class="logo-img">
+    <a href="#contact" class="nav-cta">Contact Us</a>
+</nav>
+
+<section class="hero">
+    <div class="hero-bg">
+        <img src="../01_input_pdfs/Working_Data/Showroom BannerNew.png" alt="ABC Hauz Showroom">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <div class="hero-top-row">
+            <div class="hero-photo">
+                <img src="../Sahir Salim Khamis Al Ghafri.png" alt="Sahir Salim Khamis Al Ghafri">
+            </div>
+            <div class="hero-badge">Sales Executive</div>
+        </div>
+        <h1>Sahir Salim Khamis <span>Al Ghafri</span></h1>
+        <p>Your dedicated sales consultant at ABC Hauz. Ready to help you find the perfect ceramic tiles, sanitary ware, and bathroom solutions for your dream home.</p>
+        <div class="hero-buttons">
+            <a href="https://wa.me/+96872211396" class="btn-primary">WhatsApp</a>
+            <a href="#contact" class="btn-outline">Get Directions</a>
+        </div>
+    </div>
+    <div class="scroll-indicator">
+        <span></span>
+        <p>Scroll</p>
+    </div>
+</section>
+
+<div class="section-title">
+    <h2>Contact Details</h2>
+    <p>Get in touch with your dedicated consultant</p>
+    <div class="line"></div>
+</div>
+
+<div class="consultant-section">
+    <div class="consultant-card">
+        <div class="card-call">
+            <h3>CALL ME</h3>
+            <div class="phone-circle">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            </div>
+            <p class="role">Sales Executive</p>
+            <a href="tel:+96872211396" class="phone-box">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                <span class="number">+968 722 11 396</span>
+            </a>
+        </div>
+
+        <div class="card-logo">
+            <img src="../01_input_pdfs/Working_Data/abc-hauz-logo-small.png" alt="ABC Hauz" class="card-logo-img">
+        </div>
+
+        <div class="card-time">
+            <h3>AVAILABLE TIME</h3>
+            <div class="time-clock">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+            </div>
+            <div class="time-row"><span class="day">Sat - Thu</span><span class="hours">Morning: 9:00 AM - 1:00 PM</span></div>
+<div class="time-row"><span class="day">Sat - Thu</span><span class="hours">Evening: 4:00 PM - 9:30 PM</span></div>
+<div class="time-row"><span class="day">Friday</span><span class="hours">4:00 PM - 9:30 PM</span></div>
+
+        </div>
+    </div>
+</div>
+
+<section class="location-section" id="contact">
+    <div class="location-grid">
+        <img src="../01_input_pdfs/Working_Data/Showroom BannerNew.png" alt="ABC Hauz Showroom" class="location-img">
+        <div class="location-info">
+            <h3>Visit Our <span>Showroom</span></h3>
+            <div class="address">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                <span>Main Bypass Road, Near Nizwania Kitchens,<br>Barka Sumhan, Oman</span>
+            </div>
+            <div class="hours-grid">
+                <div class="hour-item"><p class="day">Sat - Thu</p><p class="time">8:00 AM - 10:00 PM</p></div>
+                <div class="hour-item"><p class="day">Friday</p><p class="time">4:00 PM - 10:00 PM</p></div>
+            </div>
+            <a href="https://www.bing.com/maps/directions?ty=0&v=2&sV=1&style=r&rtp=%7Epos.23.66004180908203_57.91603088378906__ABC%2520Hauz%2520-%2520Oman_&cp=23.660042%7E57.916031&lvl=16" target="_blank" class="dir-btn">
+                Get Directions
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <img src="../01_input_pdfs/Working_Data/abc-hauz-logo-small.png" alt="ABC Hauz" class="footer-logo">
+    <div class="footer-copy">&copy; 2026 ABC HAUZ - Al Baraka Ceramics LLC. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
+
