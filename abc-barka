@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABC Hauz - Barka</title>
+<meta http-equiv="refresh" content="0;url=https://wa.me/+96872211396">
+<style>
+body{margin:0;padding:0;background:#0a0a0a;display:flex;justify-content:center;align-items:center;height:100vh;font-family:'Inter',sans-serif}
+.loading{color:#C9A96E;font-size:14px;letter-spacing:2px;text-transform:uppercase}
+</style>
+</head>
+<body>
+<div class="loading">Connecting to ABC Hauz Barka...</div>
+</body>
+</html>
