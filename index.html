@@ -20,6 +20,48 @@ body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#fff;min-height:100
 .card .info h3{font-family:'Playfair Display',serif;font-size:15px;font-weight:600;margin-bottom:4px}
 .card .info p{font-size:10px;color:#C9A96E;letter-spacing:2px;text-transform:uppercase}
 .no-img{background:rgba(201,169,110,0.1);display:flex;align-items:center;justify-content:center;color:#C9A96E;font-size:18px;font-weight:700}
+@media(max-width:900px){
+    .nav{padding:12px 15px}
+    .logo-img{height:28px}
+    .hero{height:auto;min-height:100vh;padding:100px 0 60px}
+    .hero-content{padding:0 20px;max-width:100%}
+    .hero-top-row{flex-direction:column;align-items:flex-start;gap:12px}
+    .hero-photo{width:120px;height:190px}
+    .hero-badge{writing-mode:horizontal-tb;text-orientation:mixed;height:auto;padding:8px 16px;font-size:9px;letter-spacing:3px}
+    .hero h1{font-size:28px;margin-bottom:15px}
+    .hero p{font-size:13px;line-height:1.7;margin-bottom:25px}
+    .hero-buttons{position:relative;left:auto;top:auto;flex-direction:row;gap:10px;flex-wrap:wrap;margin-top:20px}
+    .btn-primary,.btn-outline{padding:12px 24px;font-size:11px;letter-spacing:1px}
+    .scroll-indicator{display:none}
+    .section-title{padding:50px 15px 30px}
+    .section-title h2{font-size:26px}
+    .consultant-section{padding:0 15px 60px}
+    .consultant-card{flex-direction:column;max-width:100%}
+    .card-call,.card-logo,.card-time{border-right:none;border-bottom:1px solid rgba(255,255,255,0.06);padding:30px 20px}
+    .card-time{border-bottom:none}
+    .card-call h3{font-size:18px;letter-spacing:3px}
+    .card-logo-img{width:180px}
+    .card-time h3{font-size:14px}
+    .location-section{padding:0 20px 60px}
+    .location-grid{grid-template-columns:1fr;gap:30px}
+    .location-img{height:200px;object-fit:cover}
+    .location-info h3{font-size:24px}
+    .location-info .hours-grid{grid-template-columns:1fr}
+    .dir-btn{width:100%;text-align:center;display:block}
+    .footer{padding:30px 20px;flex-direction:column;gap:15px;text-align:center}
+    .footer-logo{height:25px}
+}
+@media(max-width:480px){
+    .hero-content{padding:0 15px}
+    .hero h1{font-size:24px}
+    .hero-photo{width:100px;height:160px}
+    .hero-buttons{flex-direction:column}
+    .btn-primary,.btn-outline{width:100%;text-align:center}
+    .card-call h3{font-size:16px}
+    .phone-circle{width:70px;height:70px}
+    .phone-circle svg{width:28px;height:28px}
+    .phone-box{padding:12px 18px}
+}
 </style>
 </head>
 <body>
@@ -116,4 +158,5 @@ body{font-family:'Inter',sans-serif;background:#0a0a0a;color:#fff;min-height:100
 </div>
 </body>
 </html>
+
 
